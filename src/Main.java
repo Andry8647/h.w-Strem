@@ -9,11 +9,16 @@ import java.util.stream.Stream;
 public class Main {
     public static void main(String[] args) {
 
+        List<Integer> list = new ArrayList<>();
+        list.add(8);
+        list.add(9);
 
-        Stream<Integer> stream = Stream.of(8,9);
+
+        Stream<Integer> stream = list.stream();
         Comparator<Integer> comparator = (o1, o2) -> o1.compareTo(o2);
         BiConsumer<Integer,Integer> biConsumer = (integer, integer2) -> integer.equals(integer2);
         findMinMax(stream,comparator,biConsumer) ;
+        evevAnd(list);
 
 
     }
