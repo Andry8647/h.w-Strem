@@ -13,7 +13,7 @@ public class Main {
         Stream<Integer> stream = Stream.of(8,9);
         Comparator<Integer> comparator = (o1, o2) -> o1.compareTo(o2);
         BiConsumer<Integer,Integer> biConsumer = (integer, integer2) -> integer.equals(integer2);
-        findMinMax(stream,comparator,biConsumer);
+        findMinMax(stream,comparator,biConsumer) ;
 
 
     }
