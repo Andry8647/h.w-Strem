@@ -16,9 +16,20 @@ public class Main {
 
         Stream<Integer> stream = list.stream();
         Comparator<Integer> comparator = (o1, o2) -> o1.compareTo(o2);
-        BiConsumer<Integer,Integer> biConsumer = (integer, integer2) -> integer.equals(integer2);
+        BiConsumer<Integer,Integer> biConsumer = (integer, integer2) -> {
+            if (integer > integer2){
+                System.out.println("Первое число больше");
+            }else if (integer < integer2) {
+                System.out.println("Второе число больше");
+            }else {
+                System.out.println("Числа равны");
+            }
+        };
         findMinMax(stream,comparator,biConsumer) ;
         evevAnd(list);
+
+
+
 
 
     }
@@ -30,7 +41,6 @@ public class Main {
     {
         List<T> listStream;
         listStream = stream
-                .limit(10)
                 .sorted()
                 .collect(Collectors.toList());
         T minNum = null;
@@ -42,6 +52,9 @@ public class Main {
         }
         minMaxConsumer.accept(minNum,maxNum);
         System.out.println(listStream);
+
+
+
     }
     public static void evevAnd(List<Integer> list){
         System.out.println(list.stream()
